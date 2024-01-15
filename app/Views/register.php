@@ -1,45 +1,40 @@
-<?= $this->extend("layouts/app") ?>
-
-<?= $this->section("body") ?>
-
-<div class="container" style="margin-top:20px;">
-    <div class="row">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Register</div>
-            <div class="panel-body">
-                <?php if (isset($validation)) : ?>
-                    <div class="col-12">
-                        <div class="alert alert-danger" role="alert">
-                            <?= $validation->listErrors() ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <form class="" action="<?= base_url('register') ?>" method="post">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone_no">Phone No</label>
-                        <input type="text" class="form-control" name="phone_no" id="phone_no">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" id="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="password_confirm">Confirm Password</label>
-                        <input type="password" class="form-control" name="password_confirm" id="password_confirm">
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-md-center">
+            <div class="col-5">
+                <h2>Register User</h2>
+                <?php if (isset($validation)): ?>
+                <div class="alert alert-warning">
+                    <?=$validation->listError()?>
+                </div>
+                <?php endif;?>
+                <form action="<?php echo base_url(); ?>/SignupController/store" class="post">
+            <div class="form-group mb-3">
+                <input type="text" name="name" placeholder="Name" value="<?= set_value('name')?>" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <input type="email" name="email" placeholder="Email" value="<?= set_value('email')?>" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control">
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-dark" type="submit">Signup</button>
+            </div>
+            </form>
             </div>
         </div>
     </div>
-</div>
-
-<?= $this->endSection() ?>
+</body>
+</html>
