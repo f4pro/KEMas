@@ -1,205 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+	<title>User Management</title>
 </head>
+
 <body>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-				 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="navbar-toggler-icon"></span>
-				</button> <a class="navbar-brand" href="#">Brand</a>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							 <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							 <a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								 <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-								<div class="dropdown-divider">
-								</div> <a class="dropdown-item" href="#">Separated link</a>
-							</div>
-						</li>
-					</ul>
-					<form class="form-inline">
-						<input class="form-control mr-sm-2" type="text" /> 
-						<button class="btn btn-primary my-2 my-sm-0" type="submit">
-							Search
-						</button>
-					</form>
-					<ul class="navbar-nav ml-md-auto">
-						<li class="nav-item active">
-							 <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-								 <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-								<div class="dropdown-divider">
-								</div> <a class="dropdown-item" href="#">Separated link</a>
-							</div>
-						</li>
-					</ul>
+
+	<div class="container mt-5">
+		<div class="mb-3">
+			<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRowModal">Add Row</button>
+		</div>
+
+		<h2 class="mb-4">User Management</h2>
+
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Action</th> <!-- New column for action buttons -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>John Doe</td>
+					<td>john@example.com</td>
+					<td>(123) 456-7890</td>
+					<td>
+						<button class="btn btn-warning btn-sm">Edit</button>
+						<button class="btn btn-danger btn-sm">Delete</button>
+					</td>
+				</tr>
+				<tr>
+					<td>Jane Doe</td>
+					<td>jane@example.com</td>
+					<td>(987) 654-3210</td>
+					<td>
+						<button class="btn btn-warning btn-sm">Edit</button>
+						<button class="btn btn-danger btn-sm">Delete</button>
+					</td>
+				</tr>
+				<!-- Add more rows as needed -->
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="addRowModal" tabindex="-1" aria-labelledby="addRowModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addRowModalLabel">Add Row</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-			</nav>
-			<div class="alert alert-success alert-dismissable">
-				 
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-					×
-				</button>
-				<h4>
-					Alert!
-				</h4> <strong>Warning!</strong> Best check yo self, you're not looking too good. <a href="#" class="alert-link">alert link</a>
-			</div>
-			<div class="jumbotron">
-				<h2>
-					Hello, world!
-				</h2>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					 <a id="modal-898262" href="#modal-container-898262" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-					
-					<div class="modal fade" id="modal-container-898262" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="myModalLabel">
-										Modal title
-									</h5> 
-									<button type="button" class="close" data-dismiss="modal">
-										<span aria-hidden="true">×</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									...
-								</div>
-								<div class="modal-footer">
-									 
-									<button type="button" class="btn btn-primary">
-										Save changes
-									</button> 
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">
-										Close
-									</button>
-								</div>
-							</div>
-							
+				<div class="modal-body">
+					<!-- Add your form fields for adding a new row -->
+					<form id="addRowForm">
+						<div class="mb-3">
+							<label for="name" class="form-label">Name</label>
+							<input type="text" class="form-control" id="name" name="name" required>
 						</div>
-						
-					</div>
-					
-					<table class="table">
-						<thead>
-							<tr>
-								<th>
-									#
-								</th>
-								<th>
-									Product
-								</th>
-								<th>
-									Payment Taken
-								</th>
-								<th>
-									Status
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									1
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									01/04/2012
-								</td>
-								<td>
-									Default
-								</td>
-							</tr>
-							<tr class="table-active">
-								<td>
-									1
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									01/04/2012
-								</td>
-								<td>
-									Approved
-								</td>
-							</tr>
-							<tr class="table-success">
-								<td>
-									2
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									02/04/2012
-								</td>
-								<td>
-									Declined
-								</td>
-							</tr>
-							<tr class="table-warning">
-								<td>
-									3
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									03/04/2012
-								</td>
-								<td>
-									Pending
-								</td>
-							</tr>
-							<tr class="table-danger">
-								<td>
-									4
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									04/04/2012
-								</td>
-								<td>
-									Call in to confirm
-								</td>
-							</tr>
-						</tbody>
-					</table>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email</label>
+							<input type="email" class="form-control" id="email" name="email" required>
+						</div>
+						<div class="mb-3">
+							<label for="phone" class="form-label">Phone</label>
+							<input type="tel" class="form-control" id="phone" name="phone" required>
+						</div>
+						<button type="button" class="btn btn-primary" id="saveRowBtn">Save</button>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#example').DataTable();
+
+			// Show modal when Add Row button is clicked
+			$('#addRowModal').on('show.bs.modal', function (event) {
+				// Clear the form when the modal is shown
+				$('#addRowForm')[0].reset();
+			});
+
+			// Save Row button click event
+			$('#saveRowBtn').click(function () {
+				// Add your logic to save the new row to the DataTable
+				// For example:
+				var newRowData = [
+					$('#name').val(),
+					$('#email').val(),
+					$('#phone').val(),
+					'<button class="btn btn-warning btn-sm">Edit</button>' +
+					'<button class="btn btn-danger btn-sm">Delete</button>'
+				];
+
+				$('#example').DataTable().row.add(newRowData).draw(false);
+
+				// Close the modal
+				$('#addRowModal').modal('hide');
+			});
+		});
+	</script>
+
 </body>
+
 </html>
