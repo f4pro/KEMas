@@ -28,6 +28,7 @@ class SignupController extends Controller
                 'name' => $this->request->getVar('name'),
                 'email' => $this->request->getVar('email'),
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+                // 'password' => $this->request->getVar('password')
             ];
             $userModel->save($data);
             return redirect()->to('/signin');

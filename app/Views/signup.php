@@ -24,7 +24,7 @@
                         <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
                     </div>
                     <div class="form-group mb-3">
-                        <input type="password" name="password" placeholder="Password" class="form-control" >
+                        <input type="password" id="password" name="password" placeholder="Password" value="<?= set_value('password') ?>" class="form-control" >
                     </div>
                     <div class="form-group mb-3">
                         <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" >
