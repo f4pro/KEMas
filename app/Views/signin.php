@@ -24,11 +24,11 @@
                         <form action="<?php echo base_url();?>/SigninController/loginAuth" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email_user" name="email_user" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password_user" name="password_user" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">Login</button>
                         </form>

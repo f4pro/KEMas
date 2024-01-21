@@ -13,4 +13,6 @@ $routes->match(['get','post'], 'SignupController/store','SignupController::store
 $routes->match(['get','post'], 'SigninController/loginAuth','SigninController::loginAuth');
 $routes->get('/signin','SigninController::index');
 $routes->get('/profile','ProfileController::index',['filter' => 'authGuard']);
-$routes->get('/user-manage','UserController::index');
+
+$routes->get('/user-manage','UserManagementController::index');
+$routes->post('/newcomer','UserManagementContorller::newcomer');

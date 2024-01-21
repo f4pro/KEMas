@@ -21,64 +21,62 @@
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 			<thead>
 				<tr>
+					<th>No</th>
 					<th>Name</th>
 					<th>Email</th>
-					<th>Phone</th>
+					<th>Created at</th>
 					<th>Action</th> <!-- New column for action buttons -->
 				</tr>
 			</thead>
 			<tbody>
+				<?php $no = 1; foreach($getUser as $orang){?>
 				<tr>
-					<td>John Doe</td>
-					<td>john@example.com</td>
-					<td>(123) 456-7890</td>
+					<td><?= $no;?></td>
+					<td><?= $orang['name_user'];?></td>
+					<td><?= $orang['email_user'];?></td>
+					<td><?= $orang['create_at_user'];?></td>
 					<td>
 						<button class="btn btn-warning btn-sm">Edit</button>
 						<button class="btn btn-danger btn-sm">Delete</button>
 					</td>
 				</tr>
-				<tr>
-					<td>Jane Doe</td>
-					<td>jane@example.com</td>
-					<td>(987) 654-3210</td>
-					<td>
-						<button class="btn btn-warning btn-sm">Edit</button>
-						<button class="btn btn-danger btn-sm">Delete</button>
-					</td>
-				</tr>
-				<!-- Add more rows as needed -->
+				<?php $no++; }?>
 			</tbody>
 		</table>
 	</div>
 
 	<!-- Modal -->
 	<div class="modal fade" id="addRowModal" tabindex="-1" aria-labelledby="addRowModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="addRowModalLabel">Add Row</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<!-- Add your form fields for adding a new row -->
-					<form id="addRowForm">
-						<div class="mb-3">
-							<label for="name" class="form-label">Name</label>
-							<input type="text" class="form-control" id="name" name="name" required>
-						</div>
-						<div class="mb-3">
-							<label for="email" class="form-label">Email</label>
-							<input type="email" class="form-control" id="email" name="email" required>
-						</div>
-						<div class="mb-3">
-							<label for="phone" class="form-label">Phone</label>
-							<input type="tel" class="form-control" id="phone" name="phone" required>
-						</div>
-						<button type="button" class="btn btn-primary" id="saveRowBtn">Save</button>
-					</form>
-				</div>
-			</div>
-		</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRowModalLabel">Add Row</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your form fields for adding a new row -->
+                <form id="addRowForm" action="<?= site_url('/newcomer');?>" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name_user" name="name_user" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email_user" name="email_user" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password_user" name="password_user" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -100,9 +98,9 @@
 				// Add your logic to save the new row to the DataTable
 				// For example:
 				var newRowData = [
-					$('#name').val(),
-					$('#email').val(),
-					$('#phone').val(),
+					$('#name_user').val(),
+					$('#email_user').val(),
+					$('#password_user').val(),
 					'<button class="btn btn-warning btn-sm">Edit</button>' +
 					'<button class="btn btn-danger btn-sm">Delete</button>'
 				];

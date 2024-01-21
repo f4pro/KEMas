@@ -18,13 +18,13 @@
                 <?php endif;?>
                 <form action="<?php echo base_url(); ?>/SignupController/store" method="post">
                     <div class="form-group mb-3">
-                        <input type="text" name="name" placeholder="Name" value="<?= set_value('name') ?>" class="form-control" >
+                        <input type="text" name="name_user" placeholder="Name" value="<?= set_value('name_user') ?>" class="form-control" >
                     </div>
                     <div class="form-group mb-3">
-                        <input type="email" name="email" placeholder="Email" value="<?= set_value('email') ?>" class="form-control" >
+                        <input type="email" name="email_user" placeholder="Email" value="<?= set_value('email_user') ?>" class="form-control" >
                     </div>
                     <div class="form-group mb-3">
-                        <input type="password" id="password" name="password" placeholder="Password" value="<?= set_value('password') ?>" class="form-control" >
+                        <input type="password" id="password_user" name="password_user" placeholder="Password" value="<?= set_value('password_user') ?>" class="form-control" >
                     </div>
                     <div class="form-group mb-3">
                         <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" >

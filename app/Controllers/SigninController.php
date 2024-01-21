@@ -15,19 +15,19 @@ class SigninController extends Controller
     {
         $session = session();
         $userModel = new UserModel();
-        $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
+        $email_user = $this->request->getVar('email_user');
+        $password_user = $this->request->getVar('password_user');
         
-        $data = $userModel->where('email', $email)->first();
+        $data = $userModel->where('email_user', $email_user)->first();
         
         if($data){
-            $pass = $data['password'];
-            $authenticatePassword = password_verify($password, $pass);
+            $pass = $data['password_user'];
+            $authenticatePassword = password_verify($password_user, $pass);
             if($authenticatePassword){
                 $ses_data = [
-                    'id' => $data['id'],
-                    'name' => $data['name'],
-                    'email' => $data['email'],
+                    'id_user' => $data['id_user'],
+                    'name_user' => $data['name_user'],
+                    'email_user' => $data['email_user'],
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
